@@ -61,6 +61,7 @@
     "*.*{ts,js}": "eslint -c .eslintrc.json"
   },
   "dependencies": {
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
     "@openzeppelin/contracts": "^4.9.0",
     "@redstone-finance/evm-connector": "^0.0.22"
   }

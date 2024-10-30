@@ -8,8 +8,8 @@ Oracle that using RedStone and Gelato Web3 functions to:
 
 ## Demo
 - Mumbai:
-  - Smart Contract: [https://mumbai.polygonscan.com/address/0xb26a01df1913a9f1e9cdbaed240e8a38f724a673#readContract](https://mumbai.polygonscan.com/address/0xb26a01df1913a9f1e9cdbaed240e8a38f724a673#readContract)
-  - Web3 Function: [https://beta.app.gelato.network/task/0xe5647565edb71d22583c74085b4dccd7e0c202569faa542caf99fd3d0d1d533d?chainId=80001](https://beta.app.gelato.network/task/0xe5647565edb71d22583c74085b4dccd7e0c202569faa542caf99fd3d0d1d533d?chainId=80001)
+  - Smart Contract: [https://volmex.cloud.blockscout.com/address/0x5B91C8E7a2DEABC623E6Ab34E8c26F27Cc18bC66#code](https://volmex.cloud.blockscout.com/address/0x5B91C8E7a2DEABC623E6Ab34E8c26F27Cc18bC66#code)
+  - Web3 Function: [https://app.gelato.network/functions/task/0xf6aff3d48021788b09b87ebe52158c6422f5a6c608b28fbbed2e451efb64462b:123420000588](https://app.gelato.network/functions/task/0xf6aff3d48021788b09b87ebe52158c6422f5a6c608b28fbbed2e451efb64462b:123420000588)
 
 ## Deploy your smart contract and web3 function
 ```
@@ -41,9 +41,9 @@ npx w3f deploy web3-functions/redstone/index.ts
 ```
 
  ✓ Web3Function deployed to ipfs.
- ✓ CID: QmWz7Y4fpoTxrXsHe1MK9qnk9bNUZrapMGGYiiEcm995JE
+ ✓ CID: QmbZTooFHkFY1Td1SFd1Mfp8RTzuUN3QKbw1csioBFEcFx
 
 5. Create the task following the link provided when deploying the web3 to IPFS in our case:
-```
-https://beta.app.gelato.network/new-task?cid=QmWz7Y4fpoTxrXsHe1MK9qnk9bNUZrapMGGYiiEcm995JE
-```
+
+Go to  https://app.gelato.network and input cid=QmbZTooFHkFY1Td1SFd1Mfp8RTzuUN3QKbw1csioBFEcFx
+

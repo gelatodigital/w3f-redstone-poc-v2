@@ -6,6 +6,7 @@ import "@nomicfoundation/hardhat-chai-matchers";
 import "@nomiclabs/hardhat-ethers";
 import "@typechain/hardhat";
 import "hardhat-deploy";
+import "@nomiclabs/hardhat-etherscan";
 
 // Process Env Variables
 import * as dotenv from "dotenv";
@@ -15,14 +16,14 @@ const PK = process.env.PK;
 const ALCHEMY_ID = process.env.ALCHEMY_ID;
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 
-// HardhatUserConfig bug
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
 const config: HardhatUserConfig = {
   // web3 functions
   w3f: {
     rootDir: "./web3-functions",
     debug: false,
-    networks: ["hardhat", "mumbai"], //(multiChainProvider) injects provider for these networks
+    networks: ["hardhat", "volmex"], //(multiChainProvider) injects provider for these networks
   },
   // hardhat-deploy
   namedAccounts: {
@@ -35,25 +36,15 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {
       forking: {
-        url: `https://polygon-mumbai.g.alchemy.com/v2/${ALCHEMY_ID}`,
-        blockNumber: 35241432,
+        url: `https://rpc.volmex.t.raas.gelato.cloud`,
+        blockNumber: 126048,
       },
     },
 
-    ethereum: {
+    volmex: {
       accounts: PK ? [PK] : [],
-      chainId: 1,
-      url: `https://eth-mainnet.alchemyapi.io/v2/${ALCHEMY_ID}`,
-    },
-    mumbai: {
-      accounts: PK ? [PK] : [],
-      chainId: 80001,
-      url: `https://polygon-mumbai.g.alchemy.com/v2/${ALCHEMY_ID}`,
-    },
-    polygon: {
-      accounts: PK ? [PK] : [],
-      chainId: 137,
-      url: "https://polygon-rpc.com",
+      chainId: 123420000588,
+      url: `https://rpc.volmex.t.raas.gelato.cloud`,
     },
   },
 
@@ -74,10 +65,20 @@ const config: HardhatUserConfig = {
   },
 
   // hardhat-deploy
-  verify: {
-    etherscan: {
-      apiKey: ETHERSCAN_API_KEY ? ETHERSCAN_API_KEY : "",
+  etherscan: {
+    apiKey: {
+      volmex: 'your API key',
     },
+    customChains: [
+      {
+        network: "volmex",
+        chainId: 123420000588,
+        urls: {
+          apiURL: "https://volmex.cloud.blockscout.com/api",
+          browserURL: "https://volmex.cloud.blockscout.com/"
+        }
+      },
+    ]
   },
 };
 
